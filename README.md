@@ -29,7 +29,7 @@ You will need a Census Bureau API key. You can request one at https://api.census
 You may want to store your API key as an environment variable.
 
 ```ruby
-$ export $CENSUS_API_KEY='your-api-key'
+$ export $API_KEY='your-api-key'
 ```
 
 ### Initializing a Client
@@ -39,7 +39,7 @@ There are two parameters required: the API key and the API Base URL.
 #### Example
 ```ruby
 @client = UsCensus::Client.new(
-  api_key: ENV['CENSUS_API_KEY'],
+  api_key: ENV['API_KEY'],
   api_base_url: 'https://api.census.gov/data/2019/acs/acs5'
 )
 ```
@@ -63,6 +63,8 @@ Some of the parameter names used by the Census API are keywords in Ruby so we ca
 |get|variables|an array of variables to retrieve|```[NAME,B19001_001E]```, that represent the name of the group AND "HOUSEHOLD INCOME IN THE PAST 12 MONTHS" in ACS5|
 |in|within|a hash of the higher levels of geography|```{ state: 24, county: 005 }``` represents county 005 (Baltimore County) within state 24 (Maryland)|
 |for|level|the lowest geography level in the request|```block group:*``` returns the data for all of the block groups within the specified county and state|
+
+Please note that the ```level``` parameter uses a colon (```:```) to delineate the level name and the level value. Also, an asterisk (```*```) can be used as a wildcard to return all of the values for that level.
 
 #### Example
 ```ruby
