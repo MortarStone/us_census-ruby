@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.census.gov/data/2019/acs/acs5?for=county%3D005&get=alksjdf&in=state%3A24&key=48551dcde4b0687fdcc49b87857b7b1451851330
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.1
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      cache-control:
+      - private
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-methods:
+      - GET,POST
+      access-control-allow-headers:
+      - Origin, X-Requested-With, Content-Type, Accept
+      content-type:
+      - text/plain;charset=ISO-8859-1
+      content-length:
+      - '29'
+      date:
+      - Fri, 07 Jan 2022 18:56:47 GMT
+      x-cnection:
+      - close
+      strict-transport-security:
+      - max-age=31536000
+      set-cookie:
+      - TS010383f0=011ba694f27845d805d54dd91a746ca5dc73f7b3d4f4aa154b1309219e8c07bb2ec4ae83c5b359239ed028259e637ba5a86fb24c9a;
+        Path=/; Domain=.api.census.gov; Secure; HTTPOnly
+    body:
+      encoding: UTF-8
+      string: 'error: invalid ''for'' argument'
+  recorded_at: Fri, 07 Jan 2022 18:56:47 GMT
+recorded_with: VCR 6.0.0

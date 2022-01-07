@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.census.gov/data/2019/acs/acs5?for=block+group%3D%2A&get=NAME&in=state%3A24+county%3A005&key=48551dcde4b0687fdcc49b87857b7b1451851330
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.1
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      cache-control:
+      - private
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-methods:
+      - GET,POST
+      access-control-allow-headers:
+      - Origin, X-Requested-With, Content-Type, Accept
+      content-type:
+      - text/plain;charset=ISO-8859-1
+      content-length:
+      - '29'
+      date:
+      - Fri, 07 Jan 2022 18:56:47 GMT
+      x-cnection:
+      - close
+      strict-transport-security:
+      - max-age=31536000
+      set-cookie:
+      - TS010383f0=011ba694f23ca2f04593c7fa57c5ce9d32489c6af1349807d06636ad7b8dd5268b4e3bd2ff1c05be2b68c059b47255341d30c7e1d0;
+        Path=/; Domain=.api.census.gov; Secure; HTTPOnly
+    body:
+      encoding: UTF-8
+      string: 'error: invalid ''for'' argument'
+  recorded_at: Fri, 07 Jan 2022 18:56:47 GMT
+recorded_with: VCR 6.0.0

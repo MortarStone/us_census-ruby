@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.census.gov/data/2019/acs/acs?for=county%3D005&get=Name&in=state%3A24&key=48551dcde4b0687fdcc49b87857b7b1451851330
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.1
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      cache-control:
+      - private
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-methods:
+      - GET,POST,OPTIONS
+      access-control-allow-headers:
+      - Origin, X-Requested-With, Content-Type, Accept
+      content-type:
+      - text/html;charset=ISO-8859-1
+      content-language:
+      - en
+      content-length:
+      - '111'
+      date:
+      - Fri, 07 Jan 2022 18:56:46 GMT
+      strict-transport-security:
+      - max-age=31536000
+      set-cookie:
+      - TS010383f0=011ba694f2f06266d427b1f0912a4fd4f7b1b2e34933daa41fe798f02570f12183db1ec0f53ef9e174c466ff8358d1508d1a8d7c08;
+        Path=/; Domain=.api.census.gov; Secure; HTTPOnly
+    body:
+      encoding: UTF-8
+      string: "<html><head><title>Error report</title></head><body><h1>HTTP Status
+        404 - /data/2019/acs/acs</h1></body></html>"
+  recorded_at: Fri, 07 Jan 2022 18:56:46 GMT
+recorded_with: VCR 6.0.0

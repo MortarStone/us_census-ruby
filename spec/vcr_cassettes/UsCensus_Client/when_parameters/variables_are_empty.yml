@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.census.gov/data/2019/acs/acs5?for=county%3D005&get=&in=state%3A24&key=48551dcde4b0687fdcc49b87857b7b1451851330
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.1
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      cache-control:
+      - private
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-methods:
+      - GET,POST
+      access-control-allow-headers:
+      - Origin, X-Requested-With, Content-Type, Accept
+      content-type:
+      - text/plain;charset=ISO-8859-1
+      content-length:
+      - '74'
+      date:
+      - Fri, 07 Jan 2022 18:56:46 GMT
+      x-cnection:
+      - close
+      strict-transport-security:
+      - max-age=31536000
+      set-cookie:
+      - TS010383f0=011ba694f2ef06ab2876fce4a6e96f19cf77e4f75987aa592945fd0e7b735846319327c7c9f76e6509a6c341c6c3514543967836b1;
+        Path=/; Domain=.api.census.gov; Secure; HTTPOnly
+    body:
+      encoding: UTF-8
+      string: 'error: the ''get'' argument must be a comma separated list of variable
+        names'
+  recorded_at: Fri, 07 Jan 2022 18:56:46 GMT
+recorded_with: VCR 6.0.0

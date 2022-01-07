@@ -1,0 +1,32 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.census.gov/data/2019/acs/acs5?for=county%3D005&get=Name&in=state%3A24&key=asdf
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.1
+  response:
+    status:
+      code: 302
+      message: Found
+    headers:
+      location:
+      - "/data/invalid_key.html"
+      content-length:
+      - '0'
+      date:
+      - Fri, 07 Jan 2022 18:56:46 GMT
+      strict-transport-security:
+      - max-age=31536000
+      set-cookie:
+      - TS010383f0=011ba694f2202734bd27fc706c34fd296d5b12b7840606478ace3f46017006d309273f9dfcde5bbc33948e90bf3eccd84f23c6ec53;
+        Path=/; Domain=.api.census.gov; Secure; HTTPOnly
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Fri, 07 Jan 2022 18:56:46 GMT
+recorded_with: VCR 6.0.0

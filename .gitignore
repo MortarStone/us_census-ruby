@@ -1,0 +1,8 @@
+/.bundle/
+/coverage/
+/tmp/
+/Gemfile.lock
+# rspec failure tracking
+.rspec_status
+.env
+*.swp
