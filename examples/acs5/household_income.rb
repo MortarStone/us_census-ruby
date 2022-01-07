@@ -28,7 +28,7 @@ results = @client.where(
     county: '005',
     tract: 411_407
   },
-  level: 'block group:*'
+  level: 'block group:4'
 )
 
 print_response(results)
