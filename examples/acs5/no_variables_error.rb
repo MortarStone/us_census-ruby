@@ -2,7 +2,7 @@
 
 require_relative 'helper'
 
-results = @client.where(
+results = @client.data(
   variables: %w[],
   within: {
     state: 24,

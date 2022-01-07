@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Obtaining an API Key
 
-You will need a Census Bureau API key. You can request one at https://api.census.gov/data/key_signup.html (https://api.census.gov/data/key_signup.html).
+You will need a Census Bureau API key. You can request one at ://api.census.gov/data/key_signup.html.
 
 ## Usage
 
@@ -47,7 +47,7 @@ There are two parameters required: the API key and the API Base URL.
 #### Why Ask for the API Base URL?
 There are a handful of Ruby gems for accessing Census data and they ask the user to specify the dataset (ex. "acs5") and the vintage (ex. "2019"). However, we were unable to use those gems for our purposes because we wanted data later vintages and the gems had not been updated to allow for those vintages.
 
-There are many different datasets and vintages to choose from: https://api.census.gov/data.html (https://api.census.gov/data.html). Not all of the base URLs have the same number of variables, or follow the same patterns.
+There are many different datasets and vintages to choose from: https://api.census.gov/data.html. Not all of the base URLs have the same number of variables, or follow the same patterns.
 
 By asking the user to explicitly provide the API base URL, we elimnate these problems. The Census' API will let the user know if the dataset and vintage is invalid. And presumably, if you are requesting Census data, you know enough about the data you are requesting to provide a valid base URL.
 
@@ -68,7 +68,7 @@ Please note that the ```level``` parameter uses a colon (```:```) to delineate t
 
 #### Example
 ```ruby
-@client.where(
+@client.data(
   variables: %w[NAME B19001_001E B19001_002E],
   within: { state: 24, county: '005', tract: 411_407 },
   level: 'block group:4'
@@ -76,6 +76,26 @@ Please note that the ```level``` parameter uses a colon (```:```) to delineate t
 ```
 constructs and requests the following URL:
 ```https://api.census.gov/data/2019/acs/acs5?get=NAME%2CB19001_001E%2CB19001_002E%&in=state%3A24+county%3A005+tract%3A411407&for=block+group%3A4&key=<api_key>```
+
+#### Additional Endpoints
+There are also endpoints for geography, groups, variables within a group, and all variables.
+
+The geography endpoint returns the results of https://api.census.gov/data/2019/acs/acs5/geography.html.
+```ruby
+@client.geography
+```
+The groups endpoint returns the results of https://api.census.gov/data/2019/acs/acs5/groups.html.
+```ruby
+@client.groups
+```
+The group_variables endpoint returns the variables in a given group. For example, the variables for group "B01001" can be found at https://api.census.gov/data/2019/acs/acs5/groups/B01001.html.
+```ruby
+@client.group_variables(<group_name>)
+```
+The variables endpoint returns the results of https://api.census.gov/data/2019/acs/acs5/variables.html.
+```ruby
+@client.variables
+```
 
 ## Development
 
