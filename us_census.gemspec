@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.summary       = 'An API wrapper for US Census data written in Ruby.'
   spec.homepage      = 'https://github.com/MortarStone/us_census-ruby'
   spec.license       = 'MIT'
-  spec.required_ruby_version = '>= 2.7.2'
+  spec.required_ruby_version = '>= 3.0.0'
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
@@ -41,4 +41,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'activesupport'
   spec.add_dependency 'dotenv'
   spec.add_dependency 'faraday'
+  spec.metadata['rubygems_mfa_required'] = 'true'
 end
