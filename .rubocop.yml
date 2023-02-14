@@ -6,6 +6,7 @@ AllCops:
     - 'Gemfile'
     - 'Gemfile.lock'
     - 'bin/*'
+    - 'vendor/**/*'
   NewCops: enable
   TargetRubyVersion: 3.0
 Style/Documentation:

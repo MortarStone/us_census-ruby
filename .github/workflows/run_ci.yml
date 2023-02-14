@@ -1,0 +1,18 @@
+env:
+  API_KEY: ${{ secrets.API_KEY }}
+
+name: CI Build
+on: push
+jobs:
+  rubocop:
+    name: Run Rubocop
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - name: Check styles
+        env:
+          API_KEY: ${{ env.API_KEY }}
+        run: bundle exec rubocop
