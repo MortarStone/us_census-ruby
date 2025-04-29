@@ -8,12 +8,13 @@ require 'dotenv'
 Dotenv.load('../../.env')
 
 @client = UsCensus::Client.new(
-  api_key: ENV['API_KEY'],
-  api_base_url: 'https://api.census.gov/data/2019/acs/acs5'
+  api_key: ENV.fetch('API_KEY', nil),
+  api_base_url: 'https://api.census.gov/data/2022/acs/acs5'
 )
 
-def print_response(results)
-  if results.empty?
+def print_response(response)
+  results = response.body
+  if results.blank?
     puts 'None'
   else
     results.each { |row| p row }

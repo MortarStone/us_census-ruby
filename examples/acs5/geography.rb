@@ -2,4 +2,5 @@
 
 require_relative 'helper'
 
-p @client.geography
+response = @client.geography
+p response.body

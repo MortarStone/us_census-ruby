@@ -2,4 +2,5 @@
 
 require_relative 'helper'
 
-p @client.groups
+response = @client.groups
+p response.body

@@ -16,3 +16,15 @@ jobs:
         env:
           API_KEY: ${{ env.API_KEY }}
         run: bundle exec rubocop
+  rspec:
+    name: Run RSpec
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - name: Run specs
+        env:
+          API_KEY: ${{ env.API_KEY }}
+        run: bundle exec rspec spec

@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
-require 'faraday'
-require 'json'
+require "#{File.dirname(__FILE__)}/auto_load"
 
 module UsCensus
   class Client
@@ -41,11 +40,8 @@ module UsCensus
     private
 
     def request(url)
-      # puts url
-      response = Faraday.get(url)
-      raise error_message(response) unless response.status == 200
-
-      JSON.parse(response.body)
+      http_response = Faraday.get(url)
+      ResponseHandler.new(http_response).call
     end
 
     def format_parameters(variables, within, level)

@@ -2,4 +2,5 @@
 
 require_relative 'helper'
 
-p @client.variables
+response = @client.variables
+p response.body
