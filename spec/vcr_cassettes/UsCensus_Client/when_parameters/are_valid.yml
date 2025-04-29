@@ -2,35 +2,43 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.census.gov/data/2019/acs/acs5?for=block+group%3A%2A&get=NAME&in=state%3A24+county%3A005&key=48551dcde4b0687fdcc49b87857b7b1451851330
+    uri: https://api.census.gov/data/2019/acs/acs5?for=block+group%3A%2A&get=NAME&in=state%3A24+county%3A005&key
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v1.4.1
+      - Faraday v2.13.0
   response:
     status:
       code: 200
-      message: OK
+      message: ''
     headers:
       cache-control:
       - max-age=60, must-revalidate
       access-control-allow-origin:
       - "*"
       access-control-allow-methods:
-      - GET,POST
+      - GET
       access-control-allow-headers:
       - Origin, X-Requested-With, Content-Type, Accept
+      referrer-policy:
+      - same-origin
+      content-security-policy:
+      - default-src 'self'; img-src 'self' data:; object-src 'none'; script-src 'self'
+        'unsafe-inline'; style-src 'self' 'unsafe-inline'; frame-ancestors 'none';
+        upgrade-insecure-requests; block-all-mixed-content
+      x-content-type-options:
+      - nosniff
       content-type:
       - application/json;charset=utf-8
       date:
-      - Fri, 07 Jan 2022 18:56:47 GMT
+      - Thu, 24 Apr 2025 20:57:31 GMT
       strict-transport-security:
       - max-age=31536000
       set-cookie:
-      - TS010383f0=011ba694f2f234ef84ef7884f42ba873bb4af4f89c38771a16477473e55ba37540aac0d502e234a2c8075b245b84f35b42de9d9410;
-        Path=/; Domain=.api.census.gov; Secure; HTTPOnly
+      - TS010383f0=01283c52a48836df6e115202e9325fef412b96ec6fc48f8c348706f38a27f9ae9d52f9dacf2083e2d1c94b2e3edb9d295920423420;
+        Path=/; Domain=.api.census.gov; Secure; HttpOnly;
       transfer-encoding:
       - chunked
     body:
@@ -566,5 +574,5 @@ http_interactions:
         ["Block Group 1, Census Tract 4114.07, Baltimore County, Maryland","24","005","411407","1"],
         ["Block Group 4, Census Tract 4114.07, Baltimore County, Maryland","24","005","411407","4"],
         ["Block Group 1, Census Tract 4114.10, Baltimore County, Maryland","24","005","411410","1"]]
-  recorded_at: Fri, 07 Jan 2022 18:56:48 GMT
+  recorded_at: Thu, 24 Apr 2025 20:57:31 GMT
 recorded_with: VCR 6.0.0

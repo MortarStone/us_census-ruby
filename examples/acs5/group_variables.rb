@@ -2,4 +2,5 @@
 
 require_relative 'helper'
 
-p @client.group_variables('B01001')
+response = @client.group_variables('B01001')
+p response.body

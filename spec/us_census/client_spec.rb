@@ -4,7 +4,7 @@ require 'spec_helper'
 
 RSpec.describe UsCensus::Client, vcr: true do
   let(:api_base_url) { 'https://api.census.gov/data/2019/acs/acs5' }
-  let(:api_key) { ENV['API_KEY'] }
+  let(:api_key) { ENV.fetch('API_KEY', nil) }
 
   let(:client) do
     UsCensus::Client.new(
@@ -60,7 +60,7 @@ RSpec.describe UsCensus::Client, vcr: true do
         within: { state: 24, county: '005' },
         level: 'block group:*'
       )
-      expect(results).to be_an(Array)
+      expect(results.body).to be_an(Array)
     end
   end
 end

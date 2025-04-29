@@ -2,7 +2,7 @@
 
 require_relative 'helper'
 
-results = @client.data(
+response = @client.data(
   variables: %w[],
   within: {
     state: 24,
@@ -12,4 +12,4 @@ results = @client.data(
   level: 'block group:*'
 )
 
-print_response(results)
+print_response(response)
