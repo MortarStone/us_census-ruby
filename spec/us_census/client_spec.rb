@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 RSpec.describe UsCensus::Client, vcr: true do
-  let(:api_base_url) { 'https://api.census.gov/data/2019/acs/acs5' }
+  let(:api_base_url) { 'https://api.census.gov/data/2022/acs/acs5' }
   let(:api_key) { ENV.fetch('API_KEY', nil) }
 
   let(:client) do
