@@ -30,8 +30,8 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'activemodel'
-  spec.add_dependency 'activesupport'
+  spec.add_dependency 'activemodel', '>= 7.1', '< 9'
+  spec.add_dependency 'activesupport', '>= 7.1', '< 9'
   spec.add_dependency 'dotenv'
   spec.add_dependency 'faraday'
   spec.metadata['rubygems_mfa_required'] = 'true'
