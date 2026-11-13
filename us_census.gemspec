@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.summary       = 'An API wrapper for US Census data written in Ruby.'
   spec.homepage      = 'https://github.com/MortarStone/us_census-ruby'
   spec.license       = 'MIT'
-  spec.required_ruby_version = '>= 3.0.0'
+  spec.required_ruby_version = '>= 4.0.0'
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
@@ -30,8 +30,8 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'activemodel'
-  spec.add_dependency 'activesupport'
+  spec.add_dependency 'activemodel', '>= 7.1', '< 9'
+  spec.add_dependency 'activesupport', '>= 7.1', '< 9'
   spec.add_dependency 'dotenv'
   spec.add_dependency 'faraday'
   spec.metadata['rubygems_mfa_required'] = 'true'

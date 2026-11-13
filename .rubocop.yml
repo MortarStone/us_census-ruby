@@ -8,7 +8,7 @@ AllCops:
     - 'bin/*'
     - 'vendor/**/*'
   NewCops: enable
-  TargetRubyVersion: 3.0
+  TargetRubyVersion: 4.0
 Style/Documentation:
   Enabled: false
 Layout/LineLength:
